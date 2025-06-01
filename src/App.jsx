@@ -5,7 +5,7 @@ import PromptInput from './components/promptInput.jsx';
 function App() {
   return (
     <div style={{ padding: '20px' }}>
-      <h1>Netflix Clone Query Bot</h1>
+      <h1>Netflix Query Bot</h1>
       <PromptInput />
     </div>
   );

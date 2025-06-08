@@ -37,7 +37,7 @@ function PromptInput() {
       </button>
       </form>
 
-      {loading ? <h2>Loading .. </h2> : 
+      {loading ? <h2>Loading ...</h2> : 
         <table border="1" style={{ marginTop: '20px', width: '80%' }}>
           <thead>
             {results.length > 0 && (

@@ -10,15 +10,15 @@ function PromptInput() {
     setResults([]);
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:3000/query', { prompt }); // 🔧 Fixed URL
-      setResults(res.data.result); // ✅ use `.result` because your backend sends `{ result: data.recordset }`
+      const res = await axios.post('http://localhost:3000/query', { prompt }); 
+      setResults(res.data.result); 
     } catch (err) {
       console.error(err);
       alert("the query you wrote is irrelevant. The tables are movies. Please ask question relevant to the data");
-      // alert(err);
+   
     } finally {
       setLoading(false);
-      // setPrompt([]);
+  
     }
   };
 
@@ -43,16 +43,19 @@ function PromptInput() {
             {results.length > 0 && (
               <tr>
                 {Object.keys(results[0]).map((key) => (
-                  <th key={key}>{key}</th>
+                  <th>{key}</th>
+                  // <th key={key}>{key}</th>
                 ))}
               </tr>
             )}
           </thead>
           <tbody>
-            {results.map((row, idx) => (
-              <tr key={idx}>
-                {Object.values(row).map((val, j) => (
-                  <td key={j}>{val}</td>
+            {results.map((row) => (
+              <tr>
+              {/* <tr key={idx}> */}
+                {Object.values(row).map((val) => (
+                  <td>{val}</td>
+                  // <td key={j}>{val}</td>
                 ))}
               </tr>
             ))}
